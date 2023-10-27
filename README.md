@@ -16,7 +16,7 @@ Entities
 Decoradores de TypeORM para entidades
 Métodos BeforeInsert, BeforeUpdate
 
-### Trabajo con BBDD Relacional:
+#### Trabajo con BBDD Relacional:
 Relaciones
 	De uno a muchos
 	Muchos a uno
@@ -30,10 +30,10 @@ Aplanar resultados
 
 Los endpoint de creación y actualización de producto permiten la actualización de una tabla secundaria.
 
-### Carga de archivos a backend
+#### Carga de archivos a backend
 validaciones y control de carga de archivos hacia el backend
 
-### Comunicación entre cliente y servidor mediante WebSockets:
+#### Comunicación entre cliente y servidor mediante WebSockets:
 Nest Gateways
 Conexiones
 Desconexiones
