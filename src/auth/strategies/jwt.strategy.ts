@@ -10,6 +10,7 @@ import { JwtPayload } from "../interfaces/jwt-payload.interface";
 @Injectable()
 export class JwtStrategy extends PassportStrategy( Strategy ){
 
+    //Este constructor es para poder hacer funcionar el método validate
     constructor(
         @InjectRepository( User )
         private readonly userRepository: Repository<User>,
@@ -25,7 +26,7 @@ export class JwtStrategy extends PassportStrategy( Strategy ){
     }
 
     //Método de validación del payload
-    //Este método se va a llamar si:
+    //Este método "validate" se va a llamar si antes:
     //  1. El JWT no ha expirado y
     //  2. Si la firma del JWT hace match con el payload
     async validate( payload: JwtPayload): Promise<User>{
@@ -33,7 +34,7 @@ export class JwtStrategy extends PassportStrategy( Strategy ){
         //const { email } = payload;
         const { id } = payload;
 
-        //vamos a consultar la BBDD para buscar a un usuario con dicho correo
+        //vamos a consultar la BBDD para buscar a un usuario con dicho correo o id
         //const user = await this.userRepository.findOneBy({ email });
         const user = await this.userRepository.findOneBy({ id });
 
@@ -46,7 +47,7 @@ export class JwtStrategy extends PassportStrategy( Strategy ){
         //console.log({user});
         
 
-        return user;
+        return user; //Lo que sea que retorne, se va a añadir a la "request"
     }
 
 }

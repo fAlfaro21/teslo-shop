@@ -15,7 +15,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
     ConfigModule,
     //Para reflejarlo como tabla en la BBDD
     TypeOrmModule.forFeature([ User ]), //Lleva el nombre de la entidad que vamos a estar manejando en este módulo
-    PassportModule.register({ //Indico modo de autenticación que quiero, es decir, cómo evaluar el métido de acceso: JWT
+    PassportModule.register({ //Indico modo de autenticación que quiero, es decir, cómo evaluar el método de acceso: JWT
       defaultStrategy: 'jwt',
     }),
     //Para un registro asíncrono, para asegurarme de que el módulo se monte cuando ya tenga definido el JWT_SECRET (o incluso, el resto de los valores de las variables de entorno)

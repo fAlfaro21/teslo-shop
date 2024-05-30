@@ -84,7 +84,8 @@ export class AuthService {
 
   private getJwtToken( payload: JwtPayload ){
 
-    //Vamos a generar el token con el payload (email)
+    //Vamos a generar el token con el payload (id)
+    //el jwtService hace parte del JwtModule (que ya tiene configurado el secreto y el tiempo de expiración)
     const token = this.jwtService.sign( payload );
     return token;
 

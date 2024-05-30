@@ -5,8 +5,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { IncomingHttpHeaders } from 'http';
 
 import { AuthService } from './auth.service';
-import { Auth, GetUser, RawHeaders } from './decorators';
-import { RoleProtected } from './decorators/role-protected.decorator';
+import { Auth, GetUser, RawHeaders, RoleProtected } from './decorators';
 
 import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from './entities/user.entity';
